@@ -35,7 +35,7 @@ class ControllerRecette extends Controller
         if ($_POST["auteur"] == "" || $_POST["idRecette"] == "") {
             throw new Exception("Il manquent une ou plusieur valeurs");
         }
-        $idRecette = $_POST['idRecette'];
+        $idRecette = $this->requete->getParametre('id');
         $dateCreation = date("Y-m-d H:i:s");
         $auteur = htmlspecialchars($_POST['auteur']);
         $contenu = htmlspecialchars($_POST['contenu']);
